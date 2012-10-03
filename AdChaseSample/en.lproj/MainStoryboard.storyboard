@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ACViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4s-tH-U0D">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="en5-ib-7tA"/>
+                                </connections>
+                            </webView>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="dsx-jS-lLE">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TBv-Db-Iof"/>
+                                </constraints>
+                                <requiredContentSizeIdentifiers>
+                                    <string>ADBannerContentSizeLandscape</string>
+                                    <string>ADBannerContentSizePortrait</string>
+                                </requiredContentSizeIdentifiers>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="YjU-Lg-fLd"/>
+                                </connections>
+                            </adBannerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h4s-tH-U0D" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="BR3-zm-qev"/>
+                            <constraint firstItem="dsx-jS-lLE" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="KZv-df-1Dd"/>
+                            <constraint firstItem="h4s-tH-U0D" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="UOU-TO-kFs"/>
+                            <constraint firstItem="dsx-jS-lLE" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="eMa-vN-0wI"/>
+                            <constraint firstItem="h4s-tH-U0D" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="otG-Ko-y1N"/>
+                            <constraint firstItem="dsx-jS-lLE" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="rVi-6L-HOd"/>
+                            <constraint firstItem="h4s-tH-U0D" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="sla-ng-sA3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bannerView" destination="dsx-jS-lLE" id="y5M-V0-ENt"/>
+                        <outlet property="webView" destination="h4s-tH-U0D" id="4dH-Ey-F85"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="ACViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ACViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bannerView" candidateClass="ADBannerView"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
